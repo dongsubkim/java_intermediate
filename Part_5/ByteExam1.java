@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 
 public class ByteExam1 {
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
@@ -27,10 +29,10 @@ public class ByteExam1 {
             try {
                 fis.close();
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
-
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - start);
     }
 }

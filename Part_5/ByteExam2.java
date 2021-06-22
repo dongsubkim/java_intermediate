@@ -3,10 +3,9 @@ package Part_5;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class ByteExam1 {
+public class ByteExam2 {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
@@ -14,9 +13,10 @@ public class ByteExam1 {
             fis = new FileInputStream("Part_5/ByteExam1.java");
             fos = new FileOutputStream("byte.txt");
 
-            int readDate = -1;
-            while ((readDate = fis.read()) != -1) {
-                fos.write(readDate);
+            int readCount = -1;
+            byte[] buffer = new byte[512];
+            while ((readCount = fis.read(buffer)) != -1) {
+                fos.write(buffer, 0, readCount);
             }
         } catch (Exception e) {
             e.printStackTrace();
