@@ -24,6 +24,12 @@ public class ByteExam1 {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            try {
+                fis.close();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
 
     }
